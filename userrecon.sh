@@ -55,6 +55,42 @@ elif [[ $check_insta == *'0'* ]]; then
 printf "\e[1;93mNot Found!\e[0m\n"
 fi
 
+## ONLYFANS
+
+check_onlyfans=$(curl -s -H "Accept-Language: en" "https://www.onlyfans.com/$username" -L | grep -o 'The link you followed may be broken'; echo $?)
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Onlyfans: \e[0m"
+
+if [[ $check_onlyfans == *'1'* ]]; then
+printf "\e[1;92m Found!\e[0m https://www.onlyfans.com/%s\n" $username
+printf "https://onlyfans.com.com/%s\n" $username > $username.txt
+elif [[ $check_onlyfans == *'0'* ]]; then
+printf "\e[1;93mNot Found!\e[0m\n"
+fi
+
+## fapello
+
+check_fapello=$(curl -s -H "Accept-Language: en" "https://www.fapello.com/$username" -L | grep -o 'The link you followed may be broken'; echo $?)
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Fapello: \e[0m"
+
+if [[ $check_fapello == *'1'* ]]; then
+printf "\e[1;92m Found!\e[0m https://www.fapello.com/%s\n" $username
+printf "https://www.fapello.com/%s\n" $username > $username.txt
+elif [[ $check_fapello == *'0'* ]]; then
+printf "\e[1;93mNot Found!\e[0m\n"
+fi
+
+## faponic
+
+check_faponic=$(curl -s -H "Accept-Language: en" "https://www.faponic.com/$username" -L | grep -o 'The link you followed may be broken'; echo $?)
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Faponic: \e[0m"
+
+if [[ $check_faponic == *'1'* ]]; then
+printf "\e[1;92m Found!\e[0m https://www.faponic.com/%s\n" $username
+printf "https://www.faponic.com/%s\n" $username > $username.txt
+elif [[ $check_faponic == *'0'* ]]; then
+printf "\e[1;93mNot Found!\e[0m\n"
+fi
+
 ## Facebook
 
 printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Facebook: \e[0m"
@@ -1039,4 +1075,3 @@ partial
 }
 banner
 scanner
-
